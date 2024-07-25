@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./api",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@config/*": ["./src/config/*"],
+      "@libs/*": ["./src/libs/*"],
+      "@packages/*": ["./src/packages/*"],
+      "@entities/*": ["./src/entities/*"],
+      "@middleware/*": ["./src/middleware/*"],
+      "@pipe/*": ["./src/pipe/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@guard/*": ["./src/guard/*"],
+      "@service/*": ["./src/service/*"],
+      "@dto/*": ["./src/dto/*"],
+      "@models/*": ["./src/models/*"],
+      "@decorator/*": ["./src/decorator/*"],
+      "@interceptor/*": ["./src/interceptor/*"],
+      "@filter/*": ["./src/filter/*"]
+    }
+  },
+  "watchOptions": {
+    // Use native file system events for files and directories
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    // Poll files for updates more frequently
+    // when they're updated a lot.
+    "fallbackPolling": "dynamicPriority",
+    // Don't coalesce watch notification
+    "synchronousWatchDirectory": true,
+    // Finally, two additional settings for reducing the amount of possible
+    // files to track  work from these directories
+    "excludeDirectories": ["**/node_modules", "_build"],
+    "excludeFiles": ["build/fileWhichChangesOfent.ts"]
+  },
+  "exclude": ["node_modules", "api", "sequelize-generator", "logs"],
+  "include": ["src/**/*", "test/**/*", ".eslintrc.js", "commitlint.config.js", ".cz-config.js"]
+}
